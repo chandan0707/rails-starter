@@ -39,8 +39,12 @@
         </section>
       </nav>
     </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="row">
+      <div class="columns">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+    </div>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
