@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
-  devise_scope :user do
-    get "logout" => "devise/sessions#destroy"
-  end
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   resources :users
 
   root "pages#home"
@@ -15,5 +13,6 @@ Rails.application.routes.draw do
     get "join", :to => "devise/registrations#new"
     get "logout", :to => "devise/sessions#destroy"
   end
+
 
 end

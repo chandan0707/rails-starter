@@ -233,6 +233,19 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.sign_out_via = :get
+  config.omniauth :facebook, ENV["FACEBOOK_KEY"], ENV["FACEBOOK_SECRET"], { :scope => 'email, offline_access, user_birthday'}#, :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+  config.omniauth :twitter, ENV["TWITTER_KEY"], ENV["TWITTER_SECRET"], { :scope => 'r_fullprofile, r_emailaddress'}#, :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+  config.omniauth :google_oauth2, ENV["GOOGLE_KEY"], ENV["GOOGLE_SECRET"],
+  {
+    :access_type => "offline",
+    :scope => 'userinfo.email,userinfo.profile',
+    :prompt => "select_account",
+    :image_aspect_ratio => "square",
+    :image_size => 50,
+    :provider_ignores_state => true
+  }
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
