@@ -1,2 +1,1 @@
-rails-starter3
-==============
+## rails-starter
