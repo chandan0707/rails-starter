@@ -5,11 +5,11 @@ default: &default
 
 development:
   <<: *default
-  database: starter3
+  database: starter
 
 test:
   <<: *default
-  database: starter3_test
+  database: starter_test
 
 production:
   <<: *default
