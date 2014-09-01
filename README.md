@@ -4,3 +4,5 @@
 
 create Procfile  
 `web: bundle exec rails server`
+
+create config/application.yml
