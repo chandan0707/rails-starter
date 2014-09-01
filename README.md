@@ -2,7 +2,7 @@
 
 `rake db:drop db:create db:migrate`
 
-create Procfile  
+create Procfile
 `web: bundle exec rails server`
 
 create config/application.yml
