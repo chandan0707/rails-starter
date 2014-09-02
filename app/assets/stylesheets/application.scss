@@ -15,3 +15,13 @@
  *= require foundation_and_overrides
 
  */
+
+.social-icons{padding:0 1%;}
+.social-icons i {font-size:18px;}
+.facebook,  .google {font-family:"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;;
+  width: 100%; height:35px; padding-top:3%; margin-bottom: 8px;}
+.modal-icons{margin-left: -10px; margin-right: 10px;}
+.facebook{background-color: #3b5999; color:#fff;}
+.facebook:hover{background-color: scale-color(#3b5999, $lightness: 15%); color:#fff;}
+.google{background-color:#dd4b39;color:#fff;}
+.google:hover{background-color: scale-color(#dd4b39, $lightness: 15%);color:#fff;}

@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
 
+  get 'settings/account'
+
+  get 'settings/password'
+
+  get 'settings/notifications'
+
+  get 'settings/profile'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   resources :users

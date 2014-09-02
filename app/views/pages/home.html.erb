@@ -1,12 +1,26 @@
 <div class="row">
-  <div class="large-6 columns">
-    Home page with a link to the <%= link_to "FAQ", faq_url %>.  And here we have more text.  And more.  And more.
-    This could go on forever.  But we won't let that happen.  Let's keep it going a little bit though.  Okay done.
+  <div class="large-8 columns">
+
+
+    <p>Dolor irure sint Lorem tempor commodo. Aliquip eiusmod non excepteur duis excepteur laborum nostrud laborum amet exercitation amet Lorem. Sint quis dolore consequat velit ullamco ipsum culpa exercitation esse pariatur. Tempor sit adipisicing qui minim irure ea.</p>
+
+    <p>Consectetur nostrud ad elit do incididunt laborum laboris esse cupidatat deserunt et nulla nostrud cillum. Proident cillum id anim Lorem nostrud ex aliqua sit ipsum. Magna ea incididunt occaecat nostrud elit amet culpa reprehenderit labore. Irure consequat fugiat id eiusmod occaecat ex.</p>
+
+    <p>Cillum eiusmod proident ad ex consectetur sit anim ad occaecat magna. Sunt dolor occaecat pariatur ea laborum ex pariatur nostrud exercitation ipsum tempor eiusmod. Ullamco incididunt non sunt proident aliqua exercitation occaecat amet adipisicing elit sunt. Consequat duis ut Lorem est anim officia esse ipsum duis ullamco id. Enim ullamco Lorem do aliquip velit aliqua ullamco ea officia nostrud pariatur eiusmod sit consectetur.</p>
+
+
+
   </div>
-  <div class="large-6 columns">
-    <p><%= link_to "Login with Email", login_url %></p>
-    <p><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook)%></p>
-    <p><%= link_to "Login with Google+", user_omniauth_authorize_path(:google_oauth2)%></p>
+  <div class="large-4 columns">
+
+    <div class="panel" align="center">
+      <a href='users/auth/facebook' class="button facebook"> <i class="fa fa-facebook modal-icons"></i> Sign In with Facebook </a>
+  		<a href='users/auth/google_oauth2' class="button google"> <i class="fa fa-google-plus modal-icons"></i> Sign In with Google+ </a>
+      <p>Or <%= link_to "login with Email", login_url %>.
+    </div>
+
+
+  
+
   </div>
 </div>
-  
