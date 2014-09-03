@@ -11,16 +11,15 @@
 
 
   </div>
-  <div class="large-4 columns">
+  <% unless current_user%>
+    <div class="large-4 columns">
 
-    <div class="panel" align="center">
-      <a href='users/auth/facebook' class="button facebook"> <i class="fa fa-facebook modal-icons"></i> Sign In with Facebook </a>
-  		<a href='users/auth/google_oauth2' class="button google"> <i class="fa fa-google-plus modal-icons"></i> Sign In with Google+ </a>
-      <p>Or <%= link_to "login with Email", login_url %>.
+      <div class="panel" align="center">
+        <a href='users/auth/facebook' class="button facebook"> <i class="fa fa-facebook modal-icons"></i> Sign In with Facebook </a>
+    		<a href='users/auth/google_oauth2' class="button google"> <i class="fa fa-google-plus modal-icons"></i> Sign In with Google+ </a>
+        <p>Or <%= link_to "login with Email", login_url %>.
+      </div>
+
     </div>
-
-
-  
-
-  </div>
+  <% end %>
 </div>

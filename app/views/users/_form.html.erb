@@ -13,12 +13,24 @@
 
   <div class="field">
     <%= f.label :username %><br>
-    <%= f.text_field :username %>
+    <%= f.text_field :username , :value => (@redirected_from_ominauth ? @user.display_name.downcase.gsub(" ","") : "")   %>
   </div>
   <div class="field">
     <%= f.label :display_name %><br>
     <%= f.text_field :display_name %>
   </div>
+  <% if @user.remote_avatar_url.present? %>
+  <div class="field">
+   <%= f.label :Avatar %><br>
+   <%= image_tag @user.remote_avatar_url %>
+   </div>
+   <%else %>
+    <div class="field">
+   <%= f.label "Default Avatar" %><br>
+   <%= image_tag 'default.jpeg'%>
+   </div>
+
+  <%end%>
   <div class="actions">
     <%= f.submit %>
   </div>

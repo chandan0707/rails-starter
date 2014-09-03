@@ -4,7 +4,22 @@
   </div>
   <div class="medium-8 columns">
     <h3>Account</h3>
-    <form>
+    <% action = params[:action] %>
+    
+    <%= form_for(@user,:method=>:patch,:url=>settings_update_info_path) do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      
+    <%= hidden_field_tag 'my_action' ,'/settings/account' %>
       <div class="row">
         <div class="small-8">
 
@@ -14,7 +29,7 @@
               <label for="right-label" class="right inline">Username</label>
             </div>
             <div class="small-9 columns">
-              <input type="text" id="right-label" placeholder="Inline Text Input">
+                <%= f.text_field :username , :value => @user.username %>
             </div>
           </div>
 
@@ -23,7 +38,7 @@
               <label for="right-label" class="right inline">Email</label>
             </div>
             <div class="small-9 columns">
-              <input type="text" id="right-label" placeholder="Inline Text Input">
+               <%= f.text_field :email , :value => @user.email%>
             </div>
           </div>
 
@@ -32,13 +47,18 @@
               <label for="right-label" class="right inline">Timezone</label>
             </div>
             <div class="small-9 columns">
+             <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones%>
             </div>
           </div>
 
-
+          <div class="actions">
+            <%= f.submit %>
+          </div>
 
         </div>
       </div>
-    </form>
+    <%end%>
+  
+
   </div>
 </div>

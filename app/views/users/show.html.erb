@@ -4,6 +4,15 @@
     <p>Display name:<%= @user.display_name %></p>
     <p>Username: <%= @user.username %></p>
     <p>User id: <%= @user.id %></p>
-    <p>Avatar:</p>
+    <p><% if @user.remote_avatar_url.present? %>
+     Avatar
+   <%= image_tag @user.remote_avatar_url %>
+   
+   <%else %>
+    Default Avatar:
+   <%= image_tag 'default.jpeg'%>
+   
+
+  <%end%></p>
   </div>
 </div>

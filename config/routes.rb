@@ -9,9 +9,16 @@ Rails.application.routes.draw do
 
   get 'settings/profile'
 
+  patch 'settings/update_info' =>"settings#update_info"
+  post 'settings/update_image' =>"settings#update_image"
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
-  resources :users
+  resources :users do
+    member do
+      get 'username'
+    end
+  end
 
   root "pages#home"
   get 'faq', to: 'pages#faq'

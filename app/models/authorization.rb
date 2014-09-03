@@ -1,5 +1,5 @@
 class Authorization < ActiveRecord::Base
-  belongs_to :user
+  	belongs_to :user
 
 	after_create :fetch_details
 
@@ -13,7 +13,7 @@ class Authorization < ActiveRecord::Base
 	def fetch_details_from_facebook
 		graph = Koala::Facebook::API.new(self.token)
 		facebook_data = graph.get_object("me")
-		self.username = facebook_data['username']
+		self.username = facebook_data['name']
 		self.save
 	end
 

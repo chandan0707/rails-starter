@@ -5,3 +5,6 @@
 /tmp
 /config/application.yml
 Procfile
+
+# Ignore application configuration
+/config/application.yml
